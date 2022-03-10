@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  background-color: #3a4764;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.borde {
+  border: 1px solid red;
+}
+
+.container .titulo .numeros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .titulo .numeros p {
+  margin: 0 5px;
+}
+
+.container .titulo .control p {
+  float: right;
+}
+
+.container .pantalla {
+  width: 450px;
+}
+
+.container .pantalla #pantalla {
+  width: 100%;
+  height: 100px;
+}
+
+.container-numeros button {
+  width: 90px;
+  padding: 15px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  margin: 10px 10px;
+  -webkit-box-shadow: 0 3px 0 0 #404e72;
+          box-shadow: 0 3px 0 0 #404e72;
+}
+
+.container-numeros .btnNumeros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 450px;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  background-color: #182034;
+  padding: 10px 5px;
+  margin: 15px 0;
+}
+
+.container-numeros .btnNumeros .reset {
+  width: 200px;
+}
+
+.container-numeros .btnNumeros .igual {
+  width: 200px;
+}
+/*# sourceMappingURL=styles.css.map */

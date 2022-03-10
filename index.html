@@ -4,10 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css/styles.css" />
     <title>App Calculator</title>
   </head>
   <body>
+    <div class="container">
+      <div class="titulo">
+        <h1>calc</h1>
+        <div class="numeros">
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+        </div>
+        <div class="control">
+          <p>theme</p>
+        </div>
+      </div>
+      <div class="pantalla">
+        <input id="pantalla" type="text" name="calculator" readonly />
+      </div>
+      <div class="container-numeros">
+        <div class="btnNumeros">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>DEL</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>+</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+          <button>.</button>
+          <button>0</button>
+          <button>/</button>
+          <button>x</button>
+          <button class="reset">RESET</button>
+          <button class="igual">=</button>
+        </div>
+      </div>
+    </div>
     <script src="script/script.js"></script>
   </body>
 </html>
