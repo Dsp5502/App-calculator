@@ -1,38 +1,6 @@
+@import './_theme1.scss';
 @import './_theme2.scss';
 @import './_theme3.scss';
-
-//*FONDOS
-
-//!main
-$VeryDarkDesaturatedBlueMain: hsl(222, 26%, 31%);
-
-//!(toggle background, keypad background)
-$VeryDarkDesaturatedBlue: hsl(223, 31%, 20%);
-
-//!(screen background):
-$VeryDarkDesaturatedBlueScreen: hsl(224, 36%, 15%);
-
-//* LLaves
-//! (key background)
-$DesaturatedDarkBlueKeyBackground: hsl(225, 21%, 49%);
-//! (key shadow)
-$DesaturatedDarkBlueKeyShadow: hsl(224, 28%, 35%);
-
-//! (key background, toggle)
-$RedKeyBackgroundToggle: hsl(6, 63%, 50%);
-//! (key shadow)
-$DarkRedKeyShadow: hsl(6, 70%, 34%);
-//! (key background)
-$LightGrayishOrangeKeyBackground: hsl(30, 25%, 89%);
-//! (key shadow)
-$GrayishOrangeKeyShadow: hsl(28, 16%, 65%);
-
-//*Texto
-$VeryDarkGrayishBlue: hsl(221, 14%, 31%);
-$White: hsl(0, 0, 100%);
-// ------------------------------------------------------------------------------------------------
-
-$Sombra: hsl(224deg, 28%, 35%);
 
 * {
   padding: 0;
@@ -62,9 +30,7 @@ body {
   }
 }
 
-.borde {
-  border: 1px solid red;
-}
+//*TITULOS
 
 .container {
   margin-top: 50px;
@@ -106,22 +72,73 @@ body {
         justify-content: flex-end;
       }
     }
-    .control p {
-      float: right;
-      color: $White;
-      margin-right: 70px;
-      font-size: 10px;
-      body.active1 & {
+
+    .control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      p {
         color: $White;
+        font-size: 10px;
+
+        body.active1 & {
+          color: $White;
+        }
+        body.active2 & {
+          color: $Text2;
+        }
+        body.active3 & {
+          color: $Text3;
+        }
       }
-      body.active2 & {
-        color: $Text2;
+
+      //*SELECTOR TEMAS
+
+      .toogle {
+        width: 60px;
+        height: 20px;
+        background-color: $VeryDarkDesaturatedBlueScreen;
+        position: relative;
+        z-index: -1;
+        border-radius: 30px;
+        margin-left: 10px;
+        body.active1 & {
+          background-color: $VeryDarkDesaturatedBlueScreen;
+        }
+        body.active2 & {
+          background-color: $fondoScreen2;
+        }
+        body.active3 & {
+          background-color: $fondoScreen3;
+        }
       }
-      body.active3 & {
-        color: $Text3;
+
+      .botonCirculo {
+        top: 0.8px;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 100px;
+        background-color: $RedKeyBackgroundToggle;
+        left: 0%;
+        body.active1 & {
+          background-color: $RedKeyBackgroundToggle;
+          left: 0%;
+        }
+        body.active2 & {
+          background-color: $FondoIgual2;
+          left: 33%;
+        }
+        body.active3 & {
+          background-color: $FondoIgual3;
+          left: 66%;
+        }
       }
     }
   }
+
+  //*DISPLAY
+
   .pantalla {
     width: 450px;
 
@@ -135,6 +152,8 @@ body {
       border: 0;
       border-radius: 10px;
       color: $White;
+      padding: 0 15px;
+      outline: none;
       body.active1 & {
         background-color: $VeryDarkDesaturatedBlueScreen;
         color: $White;
@@ -151,6 +170,7 @@ body {
   }
 }
 
+//!BOTONES
 .container-numeros {
   button {
     width: 90px;
@@ -163,6 +183,7 @@ body {
     margin: 10px 10px;
     box-shadow: 0 3px 0 0 $White;
     background-color: LightGrayishOrangeKeyBackground;
+
     body.active1 & {
       box-shadow: 0 3px 0 0 $White;
       background-color: LightGrayishOrangeKeyBackground;
@@ -177,6 +198,7 @@ body {
       color: $Text3;
     }
   }
+  //* BOTONES NUMEROS
   .btnNumeros {
     display: flex;
     width: 450px;
@@ -195,7 +217,7 @@ body {
     body.active3 & {
       background-color: $fondoKeypad3;
     }
-
+    //* BOTON RESET
     .reset {
       width: 200px;
       box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
@@ -216,6 +238,7 @@ body {
         background-color: $fondoDEL3;
       }
     }
+    //* BOTON IGUAL
     .igual {
       width: 200px;
       background-color: $RedKeyBackgroundToggle;
@@ -237,6 +260,7 @@ body {
       }
     }
 
+    //* BOTON DELETE
     .del {
       box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
       background-color: $DesaturatedDarkBlueKeyBackground;

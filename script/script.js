@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+//*IDs  BOTONES
 const pantalla = document.getElementById('pantalla');
 
 const num7 = document.getElementById('7');
@@ -20,40 +20,82 @@ const igual = document.getElementById('igual');
 const reset = document.getElementById('reset');
 const del = document.getElementById('del');
 
+//*CARGA INICIAL PAG
 document.addEventListener('DOMContentLoaded', (e) => {
   e.preventDefault();
   pantalla.value = '';
+  multiplicar.disabled = true;
+  suma.disabled = true;
+  division.disabled = true;
 });
 
+//*MUESTRA CADA VALOR INGRESADO EN EL DISPLAY
 const mostrarOperacion = (valor) => {
   valor.addEventListener('click', () => {
-    operacionCalcular = document.getElementById('pantalla').value +=
-      valor.value.toString();
-    console.log(operacionCalcular);
+    let valorIng = valor.value.toString();
+    if (
+      valorIng === '-' ||
+      valorIng === '/' ||
+      valorIng === '*' ||
+      valorIng === '+'
+    ) {
+      operacionCalcular = document.getElementById('pantalla').value +=
+        valor.value.toString();
+      multiplicar.disabled = true;
+      suma.disabled = true;
+      resta.disabled = true;
+      division.disabled = true;
+    } else {
+      operacionCalcular = document.getElementById('pantalla').value +=
+        valor.value.toString();
+      console.log(operacionCalcular);
+      multiplicar.disabled = false;
+      suma.disabled = false;
+      resta.disabled = false;
+      division.disabled = false;
+    }
   });
 };
 
-const mostrarResultado = (operacion) => {
-  const operacionFinal = eval(operacion);
-  console.log(operacionFinal);
-};
-
+//* BOTON IGUAL '='
 const calcularOperacion = (valor) => {
   valor.addEventListener('click', () => {
     let operacion = document.getElementById('pantalla').value;
+    if (
+      operacion[operacion.length - 1] === '-' ||
+      operacion[operacion.length - 1] === '/' ||
+      operacion[operacion.length - 1] === '+' ||
+      operacion[operacion.length - 1] === '*'
+    ) {
+      document.getElementById('pantalla').value = 'Syntax ERROR';
+    }
+
     let operacionCal = eval(operacion);
-    console.log(operacionCal);
-    document.getElementById('pantalla').value = operacionCal;
+    if (operacionCal === undefined) {
+      document.getElementById('pantalla').value = '';
+    } else {
+      document.getElementById('pantalla').value = operacionCal;
+    }
   });
 };
 
+//* RESET
 reset.addEventListener('click', () => {
   pantalla.value = '';
+  multiplicar.disabled = false;
+  suma.disabled = false;
+  resta.disabled = false;
+  division.disabled = false;
 });
 
+//* BORRA X EL ULTIMO VALOR INGRESADO
 del.addEventListener('click', () => {
   let value = document.getElementById('pantalla').value;
   document.getElementById('pantalla').value = value.substr(0, value.length - 1);
+  multiplicar.disabled = false;
+  suma.disabled = false;
+  resta.disabled = false;
+  division.disabled = false;
 });
 
 mostrarOperacion(num7);
@@ -73,31 +115,3 @@ mostrarOperacion(multiplicar);
 mostrarOperacion(punto);
 
 calcularOperacion(igual);
-
-// ------------temas----------------------------------------------------
-
-const tema2 = document.getElementById('tema_2');
-tema2.addEventListener('click', () => {
-  console.log('tema2');
-  const body = document.querySelector('body');
-  body.classList.add('active2');
-  body.classList.remove('active1');
-  body.classList.remove('active3');
-});
-
-const tema1 = document.getElementById('tema_1');
-tema1.addEventListener('click', () => {
-  console.log('tema1');
-  const body = document.querySelector('body');
-  body.classList.add('active1');
-  body.classList.remove('active2');
-  body.classList.remove('active3');
-});
-
-const tema3 = document.getElementById('tema_3');
-tema3.addEventListener('click', () => {
-  console.log('tema3');
-  const body = document.querySelector('body');
-  body.classList.add('active3');
-  body.classList.remove('active2');
-});

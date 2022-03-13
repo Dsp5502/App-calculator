@@ -38,10 +38,6 @@ body.active3 {
   background-color: #160628;
 }
 
-.borde {
-  border: 1px solid red;
-}
-
 .container {
   margin-top: 50px;
 }
@@ -98,10 +94,20 @@ body.active3 .container .titulo .numeros p {
           justify-content: flex-end;
 }
 
+.container .titulo .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .container .titulo .control p {
-  float: right;
   color: white;
-  margin-right: 70px;
   font-size: 10px;
 }
 
@@ -115,6 +121,53 @@ body.active2 .container .titulo .control p {
 
 body.active3 .container .titulo .control p {
   color: #ffe53d;
+}
+
+.container .titulo .control .toogle {
+  width: 60px;
+  height: 20px;
+  background-color: #182034;
+  position: relative;
+  z-index: -1;
+  border-radius: 30px;
+  margin-left: 10px;
+}
+
+body.active1 .container .titulo .control .toogle {
+  background-color: #182034;
+}
+
+body.active2 .container .titulo .control .toogle {
+  background-color: #ededed;
+}
+
+body.active3 .container .titulo .control .toogle {
+  background-color: #1d0934;
+}
+
+.container .titulo .control .botonCirculo {
+  top: 0.8px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  background-color: #d03f2f;
+  left: 0%;
+}
+
+body.active1 .container .titulo .control .botonCirculo {
+  background-color: #d03f2f;
+  left: 0%;
+}
+
+body.active2 .container .titulo .control .botonCirculo {
+  background-color: #ca5502;
+  left: 33%;
+}
+
+body.active3 .container .titulo .control .botonCirculo {
+  background-color: #00e0d1;
+  left: 66%;
 }
 
 .container .pantalla {
@@ -131,6 +184,8 @@ body.active3 .container .titulo .control p {
   border: 0;
   border-radius: 10px;
   color: white;
+  padding: 0 15px;
+  outline: none;
 }
 
 body.active1 .container .pantalla #pantalla {
