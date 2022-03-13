@@ -1,4 +1,5 @@
-@use './theme1.scss';
+@import './_theme2.scss';
+@import './_theme3.scss';
 
 //*FONDOS
 
@@ -45,11 +46,20 @@ body {
   max-width: 1440px;
   background-color: $VeryDarkDesaturatedBlueMain;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  &active1 {
+    background-color: $VeryDarkDesaturatedBlueMain;
+  }
+  &.active2 {
+    background-color: $fondoMain2;
+  }
+  &.active3 {
+    background-color: $fondoMain3;
+  }
 }
 
 .borde {
@@ -57,23 +67,59 @@ body {
 }
 
 .container {
+  margin-top: 50px;
   .titulo {
     h3 {
       color: $White;
+      body.active1 & {
+        color: $White;
+      }
+      body.active2 & {
+        color: $Text2;
+      }
+      body.active3 & {
+        color: $Text3;
+      }
     }
+
     .numeros {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
 
       p {
         margin: 0 5px;
         color: $White;
+        cursor: pointer;
+        body.active1 & {
+          color: $White;
+        }
+        body.active2 & {
+          color: $Text2;
+        }
+        body.active3 & {
+          color: $Text3;
+        }
+      }
+
+      .temas {
+        display: flex;
+        justify-content: flex-end;
       }
     }
     .control p {
       float: right;
       color: $White;
       margin-right: 70px;
+      font-size: 10px;
+      body.active1 & {
+        color: $White;
+      }
+      body.active2 & {
+        color: $Text2;
+      }
+      body.active3 & {
+        color: $Text3;
+      }
     }
   }
   .pantalla {
@@ -83,6 +129,24 @@ body {
       width: 100%;
       height: 100px;
       margin: 10px 0;
+      font-size: 32px;
+      text-align: right;
+      background-color: $VeryDarkDesaturatedBlueScreen;
+      border: 0;
+      border-radius: 10px;
+      color: $White;
+      body.active1 & {
+        background-color: $VeryDarkDesaturatedBlueScreen;
+        color: $White;
+      }
+      body.active2 & {
+        background-color: $fondoScreen2;
+        color: $Text2;
+      }
+      body.active3 & {
+        background-color: $fondoScreen3;
+        color: $Text3;
+      }
     }
   }
 }
@@ -92,12 +156,26 @@ body {
     width: 90px;
     padding: 15px;
     outline: none;
-
+    font-size: 32px;
     cursor: pointer;
     border: 0;
     border-radius: 5px;
     margin: 10px 10px;
-    box-shadow: 0 3px 0 0 $Sombra;
+    box-shadow: 0 3px 0 0 $White;
+    background-color: LightGrayishOrangeKeyBackground;
+    body.active1 & {
+      box-shadow: 0 3px 0 0 $White;
+      background-color: LightGrayishOrangeKeyBackground;
+    }
+    body.active2 & {
+      box-shadow: 0 3px 0 0 $NumSom2;
+      background-color: $NumFondo2;
+    }
+    body.active3 & {
+      box-shadow: 0 3px 0 0 $NumSom3;
+      background-color: $NumFondo3;
+      color: $Text3;
+    }
   }
   .btnNumeros {
     display: flex;
@@ -105,27 +183,78 @@ body {
     flex-flow: wrap;
     background-color: $VeryDarkDesaturatedBlueScreen;
     padding: 10px 5px;
-    margin: 15px 0;
-    .numeros {
-      font-size: 32px;
+    margin: 8px 0;
+    border-radius: 8px;
+
+    body.active1 & {
+      background-color: $VeryDarkDesaturatedBlueScreen;
     }
+    body.active2 & {
+      background-color: $fondoKeypad2;
+    }
+    body.active3 & {
+      background-color: $fondoKeypad3;
+    }
+
     .reset {
       width: 200px;
       box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
       background-color: $DesaturatedDarkBlueKeyBackground;
       color: $White;
+      font-size: 16px;
+
+      body.active1 & {
+        box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
+        background-color: $DesaturatedDarkBlueKeyBackground;
+      }
+      body.active2 & {
+        box-shadow: 0 3px 0 0 $SombraDEL2;
+        background-color: $fondoDEL2;
+      }
+      body.active3 & {
+        box-shadow: 0 3px 0 0 $SombraDEL3;
+        background-color: $fondoDEL3;
+      }
     }
     .igual {
       width: 200px;
       background-color: $RedKeyBackgroundToggle;
       box-shadow: 0 3px 0 0 $DarkRedKeyShadow;
       color: $White;
+      font-size: 16px;
+      body.active1 & {
+        background-color: $RedKeyBackgroundToggle;
+        box-shadow: 0 3px 0 0 $DarkRedKeyShadow;
+      }
+      body.active2 & {
+        background-color: $FondoIgual2;
+        box-shadow: 0 3px 0 0 $SombraIgual2;
+      }
+      body.active3 & {
+        background-color: $FondoIgual3;
+        box-shadow: 0 3px 0 0 $White;
+        color: hsl(198, 20%, 13%);
+      }
     }
 
     .del {
       box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
       background-color: $DesaturatedDarkBlueKeyBackground;
       color: $White;
+      font-size: 16px;
+
+      body.active1 & {
+        box-shadow: 0 3px 0 0 $DesaturatedDarkBlueKeyShadow;
+        background-color: $DesaturatedDarkBlueKeyBackground;
+      }
+      body.active2 & {
+        box-shadow: 0 3px 0 0 $SombraDEL2;
+        background-color: $fondoDEL2;
+      }
+      body.active3 & {
+        box-shadow: 0 3px 0 0 $SombraDEL3;
+        background-color: $fondoDEL3;
+      }
     }
   }
 }
