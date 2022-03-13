@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <div class="titulo">
-        <h1>calc</h1>
+        <h3>calc</h3>
         <div class="numeros">
           <p>1</p>
           <p>2</p>
@@ -27,28 +27,36 @@
         </div>
       </div>
       <div class="pantalla">
-        <input id="pantalla" type="text" name="calculator" readonly />
+        <form name="display">
+          <input
+            id="pantalla"
+            type="text"
+            name="calculator"
+            value="0"
+            readonly
+          />
+        </form>
       </div>
       <div class="container-numeros">
         <div class="btnNumeros">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>DEL</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>+</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>-</button>
-          <button>.</button>
-          <button>0</button>
-          <button>/</button>
-          <button>x</button>
-          <button class="reset">RESET</button>
-          <button class="igual">=</button>
+          <button id="7" class="numeros" value="7">7</button>
+          <button id="8" class="numeros" value="8">8</button>
+          <button id="9" class="numeros" value="9">9</button>
+          <button id="del" class="del">DEL</button>
+          <button id="4" class="numeros" value="4">4</button>
+          <button id="5" class="numeros" value="5">5</button>
+          <button id="6" class="numeros" value="6">6</button>
+          <button id="+" value="+">+</button>
+          <button id="1" class="numeros" value="1">1</button>
+          <button id="2" class="numeros" value="2">2</button>
+          <button id="3" class="numeros" value="3">3</button>
+          <button id="-" value="-">-</button>
+          <button id="." value=".">.</button>
+          <button id="0" value="0">0</button>
+          <button id="/" value="/">/</button>
+          <button id="x" value="*">x</button>
+          <button id="reset" value="reset" class="reset">RESET</button>
+          <button id="igual" value="igual" class="igual">=</button>
         </div>
       </div>
     </div>
